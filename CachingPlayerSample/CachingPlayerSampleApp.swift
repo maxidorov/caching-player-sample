@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct CachingPlayerSampleApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+  var body: some Scene {
+    WindowGroup {
+      GuidanceView(viewModel: viewModel)
     }
+  }
 }
+
+private let viewModel = GuidanceViewModel(
+  model: GuidanceModel(),
+  videoPlayerManager: VideoPlayerManager()
+)
